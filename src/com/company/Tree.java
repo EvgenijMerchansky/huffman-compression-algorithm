@@ -3,28 +3,39 @@ package com.company;
 import java.util.PriorityQueue;
 
 class Tree {
-	private Tree() {
-	}
-
-	PriorityQueue<Leaf> treeMaker(PriorityQueue<Leaf> leafs) {
-		boolean iterator = leafs.size() != 0;
+	PriorityQueue<Node> makeTree(PriorityQueue<Node> nodes) {
+		boolean iterator = nodes.size() != 0;
+		int count = 0;
 		while (iterator) {
-			final Leaf lastNode = leafs.poll();
-			final Leaf preLastNode = leafs.poll();
-			// todo: fix getSymbol() (with exception) and getWeight() (with exception);
-			if (leafs.size() > 0) {
-				Character parentSymbol = leafs.poll().getSymbol();
-				leafs.add(new Leaf(parentSymbol, lastNode.getWeight() + preLastNode.getWeight()));
+			if (nodes.size() > 1) {
+				final Node lastNode = nodes.poll();
+				final Node preLastNode = nodes.poll();
+
+				nodes.add(makeNewNode(count, lastNode, preLastNode));
 			} else {
-				leafs.add(new Leaf('^', lastNode.getWeight() + preLastNode.getWeight()));
 				iterator = false;
 			}
 		}
+		return nodes;
+	}
 
-		return leafs;
+	private Node makeNewNode(int count, Node left, Node right) { // todo: make this one with symbol key and '1001011' - value
+//		new Table().makeTable(count,new Node(
+//			left,
+//			right,
+//			left.getWeight() + right.getWeight()
+//		));
+		return new Node(
+			left,
+			right,
+			left.getWeight() + right.getWeight()
+		);
+	}
+
+	private Tree() {
 	}
 
 	static Tree run() {
-			return new Tree();
+		return new Tree();
 	}
 }

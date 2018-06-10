@@ -20,11 +20,14 @@ class Application {
 				// todo: make Qap list {key: value}
 				final Map<Character, Integer> mapWithFrequency = converter().toCharacters(file);
 				// todo: make PriorityQueue for Leafs {symbol: weight} - should be sorted z -> a
-				final PriorityQueue<Leaf> leafsQueue = QueueCreator.run().createQueue(mapWithFrequency);
+				final PriorityQueue<Node> sortedNodes = QueueCreator.run().createQueue(mapWithFrequency);
 				// todo: make Binary tree with our leafs
-				final PriorityQueue<Leaf> tree = Tree.run().treeMaker(leafsQueue);
+				PriorityQueue<Node> nodes = Tree.run().makeTree(sortedNodes); // 1 element (ONE NODE)
+				for (Node node : nodes) {
+					System.out.println(node.getWeight());
+				}
 				// todo: print tree:
-				System.out.println(tree.peek().getWeight() + " " + tree.peek().getSymbol() + " :tree");
+
 
 				break;
 			case "--decompress":

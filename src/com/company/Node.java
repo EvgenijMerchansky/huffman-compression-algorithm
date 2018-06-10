@@ -1,27 +1,34 @@
 package com.company;
 
-public class Node {
+public class Node implements Comparable<Node> {
+	private Node left;
+	private Node right;
 	private int weight;
-	private String symbol;
 
-	Node(String symbol, int weight) {
-		this.symbol = symbol;
+	Node(Node left, Node right, int weight) {
+		this.left = left;
+		this.right = right;
 		this.weight = weight;
 	}
 
-	public int getWeight() {
+	public Node(Character symbol, int weight) {
+		this.weight = weight;
+	}
+
+	int getWeight() {
 		return weight;
 	}
 
-	public void setWeight(int weight) {
-		this.weight = weight;
+	Node getLeft() {
+		return left;
 	}
 
-	public String getSymbol() {
-		return symbol;
+	Node getRight() {
+		return right;
 	}
 
-	public void setSymbol(String symbol) {
-		this.symbol = symbol;
+	@Override
+	public int compareTo(Node node) {
+		return Integer.compare(this.getWeight(), node.getWeight());
 	}
 }
