@@ -18,16 +18,15 @@ class Application {
 		switch (mode) {
 			case "--compress":
 				// todo: make Qap list {key: value}
-				final Map<Character, Integer> mapWithFrequency = converter().toCharacters(file);
+				final Map<Character, Integer> charactersListWithFrequency = converter().toCharacters(file);
 				// todo: make PriorityQueue for Leafs {symbol: weight} - should be sorted z -> a
-				final PriorityQueue<Node> sortedNodes = QueueCreator.run().createQueue(mapWithFrequency);
+				final PriorityQueue<Node> sortedList = QueueCreator.run().createQueue(charactersListWithFrequency);
 				// todo: make Binary tree with our leafs
-				PriorityQueue<Node> nodes = Tree.run().makeTree(sortedNodes); // 1 element (ONE NODE)
+				PriorityQueue<Node> nodes = Tree.run().makeTree(sortedList);
 				for (Node node : nodes) {
-					System.out.println(node.getWeight());
+					System.out.println(node);
 				}
 				// todo: print tree:
-
 
 				break;
 			case "--decompress":
