@@ -1,60 +1,31 @@
 package com.company;
 
+import com.company.nodes.InnerNode;
+import com.company.nodes.Node;
+
 import java.util.PriorityQueue;
 
 class Tree {
+	private Tree() {
+	}
+
 	PriorityQueue<Node> makeTree(PriorityQueue<Node> nodes) {
-		boolean iterator = nodes.size() != 1;
-		int count = 0;
-
-		while (iterator) {
-			boolean sizeCondition = nodes.size() > 2;
-
-			final Node last1 = nodes.poll();
-			final Node last2 = nodes.poll();
-			final Node parent = nodes.peek();
-			assert parent != null;
-
-			if (sizeCondition && last1 != null && last2 != null) {
-				nodes.add(makeNewNode(count, last1, last2, parent.getSymbol()));
-			} else {
-				nodes.add(makeRootNode(count, last1, last2));
+		while (nodes.size() > 1) {
+			Node first = nodes.poll();
+			Node second = nodes.poll();
+			Character symbol = null;
+			if (nodes.peek() != null) {
+				symbol = nodes.peek().getSymbol();
 			}
-
-			if (!sizeCondition) iterator = false;
+			Node parentNode = new InnerNode(symbol, first, second);
+			nodes.add(parentNode);
 		}
 
+		Node root = nodes.poll();
+		assert root != null;
+		root.createCode("");
+		nodes.add(root);
 		return nodes;
-	}
-
-	private Node makeNewNode(int count, Node left, Node right, Character symbol) { // todo: make this one with symbol key and '1001011' - value
-		left.setCode("0");
-		right.setCode("1");
-// 		new Table().makeTable(count,new Node(
-//			left,
-//			right,
-//			left.getWeight() + right.getWeight()
-//		));
-		return new Node(
-			left,
-			right,
-			left.getWeight() + right.getWeight(),
-			symbol
-		);
-	}
-
-	private Node makeRootNode(int count, Node left, Node right) {
-		left.setCode("0");
-		right.setCode("1");
-
-		return new Node(
-			left,
-			right,
-			left.getWeight() + right.getWeight()
-		);
-	}
-
-	private Tree() {
 	}
 
 	static Tree run() {
