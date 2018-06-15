@@ -13,7 +13,7 @@ public class SymbolMapper {
 
 		try (BufferedReader stream = new BufferedReader(new FileReader(new File(path)))) {
 			int ch;
-			while ((ch = stream.read())> -1) {
+			while ((ch = stream.read()) > -1) {
 				char ch1 = (char) ch;
 
 				if (map.containsKey(ch1)) {

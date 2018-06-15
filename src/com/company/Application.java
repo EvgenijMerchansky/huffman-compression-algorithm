@@ -2,6 +2,7 @@ package com.company;
 
 import com.company.converters.QueueCreator;
 import com.company.converters.Strings;
+import com.company.helpers.Names;
 import com.company.nodes.Node;
 
 import java.util.HashMap;
@@ -12,19 +13,18 @@ import java.util.PriorityQueue;
 import static com.company.converters.SymbolMapper.converter;
 
 class Application { // shift + fn + f6 (fast editing)
-
 	private Application() {
 	}
 
 	void run(String[] args) {
+		final String mode = args[0];
+		final String file = args[1];
 		final String COMPRESS = "--compress";
 		final String DECOMPRESS = "--decompress";
-		// MAKE NAME BUILDER CLASS
-		final String TABLE_FILE_NAME = "huffman.table.txt";
-		final String OUTPUT_FILE_NAME = "test.compressed.txt";
+		final String OUTPUT_FILE_NAME = Names.run().createOutputFileName(file);
+		final String TABLE_FILE_NAME = Names.run().getTableFileName();
+		final String TABLE_FILE_PATH = Names.run().getMetaTablePath();
 
-		final String mode = args[0];
-		final String file = args[1]; // for `decompress` will be another file. // cut last word for correct output file naming
 		switch (mode) {
 			case COMPRESS:
 				// todo: make Qap list {key: value}
@@ -38,7 +38,7 @@ class Application { // shift + fn + f6 (fast editing)
 				// todo: write mapped table to separate file
 				WriteManager.run().writeTable(mappedTable, TABLE_FILE_NAME);
 				// todo: make binary string from mapped table and write it in separate file
-				WriteManager.run().writeString(mappedTable, OUTPUT_FILE_NAME);
+				String compressedFile = WriteManager.run().writeString(TABLE_FILE_PATH, OUTPUT_FILE_NAME);
 
 				break;
 			case DECOMPRESS:
