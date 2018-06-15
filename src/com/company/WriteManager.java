@@ -10,19 +10,16 @@ class WriteManager {
 
 	void writeTable(HashMap<Character, String> mappedTable, String fileName) {
 		try (FileWriter fileWriter = new FileWriter(new File(fileName))){
-
 			for (Map.Entry<Character, String> entry : mappedTable.entrySet()) {
 				fileWriter.write(entry + "\n");
 				fileWriter.flush();
 			}
-
 		} catch (IOException ioe) {
 			ioe.printStackTrace();
 		}
 	}
 
 	String writeString(String tablePath, String outputFileName) {
-		System.out.println(tablePath + " " + outputFileName);
 		final StringBuilder result = new StringBuilder();
 		try (
 			BufferedReader reader = new BufferedReader(new FileReader(tablePath));

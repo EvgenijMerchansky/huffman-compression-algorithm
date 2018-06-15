@@ -22,7 +22,6 @@ class Application { // shift + fn + f6 (fast editing)
 		final String COMPRESS = "--compress";
 		final String DECOMPRESS = "--decompress";
 		final String OUTPUT_FILE_NAME = Names.run().createOutputFileName(file);
-		final String TABLE_FILE_NAME = Names.run().getTableFileName();
 		final String TABLE_FILE_PATH = Names.run().getMetaTablePath();
 
 		switch (mode) {
@@ -36,7 +35,7 @@ class Application { // shift + fn + f6 (fast editing)
 				// todo: make mapped table from nodes list
 				final HashMap<Character, String> mappedTable = Table.run().convertToMap(listForTable);
 				// todo: write mapped table to separate file
-				WriteManager.run().writeTable(mappedTable, TABLE_FILE_NAME);
+				WriteManager.run().writeTable(mappedTable, TABLE_FILE_PATH);
 				// todo: make binary string from mapped table and write it in separate file
 				String compressedFile = WriteManager.run().writeString(TABLE_FILE_PATH, OUTPUT_FILE_NAME);
 

@@ -6,16 +6,16 @@ import java.util.HashMap;
 import java.util.List;
 
 public class TableCreator {
-	private final HashMap<Character, String> map = new HashMap<>();
 
 	private TableCreator() {
 	}
 
 	public HashMap<Character, String> createMappedTable(List<Node> listForMap) {
+		HashMap<Character, String> map = new HashMap<>();
 		for (Node node : listForMap) {
 			map.put(node.getSymbol(), node.getCode());
 		}
-		return this.map;
+		return map;
 	}
 
 
