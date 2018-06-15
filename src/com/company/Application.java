@@ -4,30 +4,42 @@ import com.company.converters.QueueCreator;
 import com.company.converters.Strings;
 import com.company.nodes.Node;
 
+import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.PriorityQueue;
 
 import static com.company.converters.SymbolMapper.converter;
 
 class Application { // shift + fn + f6 (fast editing)
+
 	private Application() {
 	}
 
 	void run(String[] args) {
 		final String COMPRESS = "--compress";
 		final String DECOMPRESS = "--decompress";
+		// MAKE NAME BUILDER CLASS
+		final String TABLE_FILE_NAME = "huffman.table.txt";
+		final String OUTPUT_FILE_NAME = "test.compressed.txt";
 
 		final String mode = args[0];
-		final String file = args[1]; // for `decompress` will be another file.
+		final String file = args[1]; // for `decompress` will be another file. // cut last word for correct output file naming
 		switch (mode) {
 			case COMPRESS:
 				// todo: make Qap list {key: value}
 				final Map<Character, Integer> charactersListWithFrequency = converter().toCharacters(file);
 				// todo: make PriorityQueue for Leafs {symbol: weight} - should be sorted z -> a
 				final PriorityQueue<Node> nodes = QueueCreator.run().createQueue(charactersListWithFrequency);
-				// todo: make Binary tree with our leafs
-				final PriorityQueue<Node> tree = Tree.run().makeTree(nodes);
-				System.out.println(tree + " : tree");
+				// todo: make Binary tree witch return nodes list NODE { getKey() // z, getCode // 1001101 }
+				final List<Node> listForTable = Tree.run().getListForTable(nodes);
+				// todo: make mapped table from nodes list
+				final HashMap<Character, String> mappedTable = Table.run().convertToMap(listForTable);
+				// todo: write mapped table to separate file
+				WriteManager.run().writeTable(mappedTable, TABLE_FILE_NAME);
+				// todo: make binary string from mapped table and write it in separate file
+				WriteManager.run().writeString(mappedTable, OUTPUT_FILE_NAME);
+
 				break;
 			case DECOMPRESS:
 				// todo: make instance for file unpacking

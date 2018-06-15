@@ -1,13 +1,8 @@
 package com.company.nodes;
 
-import com.company.TreeTable;
-
-import java.util.HashMap;
-
 import static java.lang.Integer.compare;
 
 public class Node implements Comparable<Node> {
-	private HashMap<Character, String> hmap = new HashMap<>();
 	private int weight;
 	private Character symbol;
 	private String code;
@@ -25,7 +20,7 @@ public class Node implements Comparable<Node> {
 		this.code = code;
 	}
 
-	private String getCode() {
+	public String getCode() {
 		return code;
 	}
 
@@ -39,7 +34,6 @@ public class Node implements Comparable<Node> {
 
 	public void createCode(String code) {
 		setCode(code);
-		TreeTable.run().makeTable(this.getSymbol(), this.getCode()); // in separate method!
 	}
 
 	@Override
