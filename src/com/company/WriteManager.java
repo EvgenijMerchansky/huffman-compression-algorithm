@@ -27,7 +27,7 @@ class WriteManager {
 		) {
 
 			while ((reader.read()) > -1) {
-				result.append(reader.readLine().replaceAll("[^0-9]", ""));
+				result.append(reader.readLine().replaceAll("[^0-9]", "") + " ");
 			}
 
 			writer.write(result.toString());
@@ -35,23 +35,7 @@ class WriteManager {
 			e.printStackTrace();
 		}
 
-		return result.toString(); // todo: rebuild this one to bytes!
-
-//		for (Map.Entry<Character, String> entry : mappedTable.entrySet()) {
-//			try (BufferedWriter writer = new BufferedWriter(new FileWriter(outputFileName))) {
-//				final StringBuilder result = new StringBuilder();
-//				final byte[] cArray = entry.getValue().getBytes();
-//
-//				for (byte b : cArray) {
-//					for (int i = 0; i < 8; i++) {
-//						result.append((b >> (8 - (i + 1)) & 0x0001));
-//					}
-//					writer.write(result.toString());
-//				}
-//			} catch (IOException e) {
-//				e.printStackTrace();
-//			}
-//		}
+		return result.toString();
 	}
 
 	static WriteManager run() {

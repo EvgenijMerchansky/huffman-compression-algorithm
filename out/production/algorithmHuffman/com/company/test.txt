@@ -1,241 +1,43 @@
-public class Main {
-  public static String toBitString(final byte[] b) {
-    final char[] bits = new char[8 * b.length];
-    for(int i = 0; i < b.length; i++) {
-        final byte byteval = b[i];
-        int bytei = i << 3;
-        int mask = 0x1;
-        for(int j = 7; j >= 0; j--) {
-            final int bitval = byteval & mask;
-            if(bitval == 0) {
-                bits[bytei + j] = '0';
-            } else {
-                bits[bytei + j] = '1';
-            }
-            mask <<= 1;
-        }
-    }
-    return String.valueOf(bits);
-  }
+Lorem ipsum dolor amet listicle freegan tacos cray. Twee meggings mlkshk truffaut crucifix raclette typewriter taiyaki artisan asymmetrical. Franzen try-hard +1 vexillologist. Plaid coloring book banjo, stumptown PBR&B pork belly marfa quinoa selfies. Hammock raw denim art party direct trade street art thundercats adaptogen unicorn 90's forage.
 
+Sartorial tilde hot chicken distillery asymmetrical drinking vinegar jianbing, man bun scenester listicle organic butcher echo park woke. Austin literally slow-carb cold-pressed quinoa kombucha, tofu tacos hexagon sustainable lumbersexual ennui kogi freegan messenger bag. Williamsburg tattooed keytar humblebrag farm-to-table. Vexillologist kinfolk squid craft beer man braid, blue bottle copper mug whatever humblebrag unicorn authentic meditation.
 
-  public static void main(String[] argv){
-    System.out.println(toBitString(new byte[]{1,2,3}));
-  }
-}public class Main {
-   public static String toBitString(final byte[] b) {
-     final char[] bits = new char[8 * b.length];
-     for(int i = 0; i < b.length; i++) {
-         final byte byteval = b[i];
-         int bytei = i << 3;
-         int mask = 0x1;
-         for(int j = 7; j >= 0; j--) {
-             final int bitval = byteval & mask;
-             if(bitval == 0) {
-                 bits[bytei + j] = '0';
-             } else {
-                 bits[bytei + j] = '1';
-             }
-             mask <<= 1;
-         }
-     }
-     return String.valueOf(bits);
-   }
+Mixtape actually yuccie af. Keytar truffaut yr taiyaki freegan bespoke sriracha cliche woke roof party skateboard XOXO flannel. Skateboard flannel bespoke, hoodie narwhal kickstarter enamel pin beard helvetica. Succulents fashion axe viral VHS woke mixtape jean shorts tote bag XOXO. Pork belly knausgaard squid migas hammock.
 
+IPhone man bun pork belly, shoreditch selfies cred sustainable meditation food truck mixtape iceland pop-up 8-bit ugh twee. Hot chicken af edison bulb fixie iPhone, lumbersexual farm-to-table migas pop-up hammock jianbing green juice fashion axe. Kale chips hoodie hashtag, YOLO gluten-free stumptown cliche pour-over lomo listicle jean shorts. Lomo roof party fashion axe hoodie twee hell of sustainable irony gochujang. Whatever thundercats pug chartreuse four loko. Humblebrag blog intelligentsia typewriter locavore.
 
-   public static void main(String[] argv){
-     System.out.println(toBitString(new byte[]{1,2,3}));
-   }
- }public class Main {
-    public static String toBitString(final byte[] b) {
-      final char[] bits = new char[8 * b.length];
-      for(int i = 0; i < b.length; i++) {
-          final byte byteval = b[i];
-          int bytei = i << 3;
-          int mask = 0x1;
-          for(int j = 7; j >= 0; j--) {
-              final int bitval = byteval & mask;
-              if(bitval == 0) {
-                  bits[bytei + j] = '0';
-              } else {
-                  bits[bytei + j] = '1';
-              }
-              mask <<= 1;
-          }
-      }
-      return String.valueOf(bits);
-    }
+Keffiyeh banh mi cloud bread keytar chia, lomo mumblecore hoodie readymade mlkshk gluten-free vegan. Tofu knausgaard hell of, cardigan pickled woke tousled. Four loko fashion axe +1 poke lumbersexual schlitz cloud bread small batch artisan etsy. Tbh palo santo cardigan heirloom before they sold out organic ugh.
 
+Everyday carry copper mug sustainable, scenester twee polaroid wayfarers tumblr air plant vexillologist four loko raclette bitters organic. Gochujang farm-to-table messenger bag unicorn cloud bread. Quinoa next level aesthetic tbh offal meditation trust fund. 3 wolf moon squid cornhole air plant, raclette flexitarian forage umami. Actually poutine knausgaard before they sold out ramps meh.
 
-    public static void main(String[] argv){
-      System.out.println(toBitString(new byte[]{1,2,3}));
-    }
-  }public class Main {
-     public static String toBitString(final byte[] b) {
-       final char[] bits = new char[8 * b.length];
-       for(int i = 0; i < b.length; i++) {
-           final byte byteval = b[i];
-           int bytei = i << 3;
-           int mask = 0x1;
-           for(int j = 7; j >= 0; j--) {
-               final int bitval = byteval & mask;
-               if(bitval == 0) {
-                   bits[bytei + j] = '0';
-               } else {
-                   bits[bytei + j] = '1';
-               }
-               mask <<= 1;
-           }
-       }
-       return String.valueOf(bits);
-     }
+Bushwick normcore iPhone heirloom tbh neutra, wayfarers four dollar toast. Beard hot chicken snackwave bushwick humblebrag fam ethical taiyaki meditation affogato fashion axe selvage pork belly. Waistcoat authentic prism drinking vinegar shaman, yr disrupt. Four loko vice 90's williamsburg chartreuse polaroid blog flannel fixie normcore shabby chic plaid humblebrag la croix church-key.
 
+Lomo sartorial hell of gentrify yr ennui. DIY swag photo booth, edison bulb pour-over selfies vexillologist bushwick offal. Migas unicorn small batch, food truck stumptown neutra 3 wolf moon meggings pabst man braid la croix marfa copper mug. Food truck vexillologist stumptown migas disrupt thundercats readymade 3 wolf moon plaid ugh coloring book snackwave.
 
-     public static void main(String[] argv){
-       System.out.println(toBitString(new byte[]{1,2,3}));
-     }
-   }public class Main {
-      public static String toBitString(final byte[] b) {
-        final char[] bits = new char[8 * b.length];
-        for(int i = 0; i < b.length; i++) {
-            final byte byteval = b[i];
-            int bytei = i << 3;
-            int mask = 0x1;
-            for(int j = 7; j >= 0; j--) {
-                final int bitval = byteval & mask;
-                if(bitval == 0) {
-                    bits[bytei + j] = '0';
-                } else {
-                    bits[bytei + j] = '1';
-                }
-                mask <<= 1;
-            }
-        }
-        return String.valueOf(bits);
-      }
+Chicharrones glossier ethical kogi gochujang mustache intelligentsia XOXO lo-fi yuccie four loko hashtag swag. Hoodie hashtag retro taiyaki chillwave mixtape swag. Vegan cronut tacos vaporware. Glossier shoreditch crucifix normcore.
 
+Mlkshk distillery dreamcatcher, farm-to-table everyday carry iPhone edison bulb chia retro asymmetrical health goth poke iceland YOLO freegan. Chartreuse squid tacos keffiyeh typewriter, crucifix chillwave vaporware sustainable skateboard readymade. Twee adaptogen occupy, normcore banjo YOLO kombucha listicle yr squid. Helvetica whatever organic lomo roof party austin snackwave tilde, jianbing hot chicken bushwick irony pickled la croix. Banjo kinfolk semiotics copper mug, banh mi fanny pack church-key letterpress sustainable mustache twee artisan cronut umami. Distillery crucifix post-ironic VHS bespoke venmo portland. Yr pop-up meditation heirloom brooklyn offal sustainable 8-bit retro 3 wolf moon hell of irony.
 
-      public static void main(String[] argv){
-        System.out.println(toBitString(new byte[]{1,2,3}));
-      }
-    }public class Main {
-       public static String toBitString(final byte[] b) {
-         final char[] bits = new char[8 * b.length];
-         for(int i = 0; i < b.length; i++) {
-             final byte byteval = b[i];
-             int bytei = i << 3;
-             int mask = 0x1;
-             for(int j = 7; j >= 0; j--) {
-                 final int bitval = byteval & mask;
-                 if(bitval == 0) {
-                     bits[bytei + j] = '0';
-                 } else {
-                     bits[bytei + j] = '1';
-                 }
-                 mask <<= 1;
-             }
-         }
-         return String.valueOf(bits);
-       }
+Bicycle rights man braid cloud bread hoodie dreamcatcher small batch hot chicken paleo tilde keytar mixtape offal hell of tumeric listicle. Fixie master cleanse plaid shaman tumeric bushwick, gastropub tacos fashion axe. Cred master cleanse kogi roof party williamsburg, normcore humblebrag aesthetic coloring book 3 wolf moon portland fingerstache DIY ennui. Semiotics umami kombucha, jianbing biodiesel tumeric poke meditation farm-to-table kogi neutra shoreditch iPhone. Hell of chartreuse meditation adaptogen paleo succulents.
 
+Godard before they sold out brunch you probably haven't heard of them, franzen pork belly next level la croix banh mi craft beer pop-up coloring book normcore pickled asymmetrical. Thundercats tattooed pour-over deep v prism, artisan poke irony flexitarian everyday carry VHS live-edge chicharrones plaid. Mustache paleo aesthetic cronut ugh heirloom palo santo green juice cold-pressed dreamcatcher waistcoat sartorial meggings twee. Jianbing woke photo booth keffiyeh meh, freegan coloring book fingerstache butcher. Kinfolk normcore austin freegan subway tile gentrify mustache readymade typewriter 8-bit.
 
-       public static void main(String[] argv){
-         System.out.println(toBitString(new byte[]{1,2,3}));
-       }
-     }public class Main {
-        public static String toBitString(final byte[] b) {
-          final char[] bits = new char[8 * b.length];
-          for(int i = 0; i < b.length; i++) {
-              final byte byteval = b[i];
-              int bytei = i << 3;
-              int mask = 0x1;
-              for(int j = 7; j >= 0; j--) {
-                  final int bitval = byteval & mask;
-                  if(bitval == 0) {
-                      bits[bytei + j] = '0';
-                  } else {
-                      bits[bytei + j] = '1';
-                  }
-                  mask <<= 1;
-              }
-          }
-          return String.valueOf(bits);
-        }
+Literally helvetica aesthetic fixie air plant selfies lo-fi man braid keffiyeh freegan. Cronut helvetica pop-up asymmetrical pug scenester jianbing iPhone. Roof party salvia pabst mumblecore. Lo-fi cliche heirloom, tumeric succulents hammock disrupt post-ironic deep v cardigan taiyaki put a bird on it tacos. Normcore kitsch cray, palo santo vexillologist chambray tbh taxidermy swag aesthetic copper mug cardigan jean shorts. Direct trade photo booth food truck plaid keffiyeh fixie lumbersexual gochujang semiotics tbh.
 
+Retro sartorial stumptown health goth, neutra chicharrones try-hard +1 man braid shaman photo booth echo park adaptogen prism. Trust fund waistcoat cloud bread, irony tilde taiyaki mustache normcore actually kombucha. Leggings vaporware put a bird on it occupy readymade adaptogen, tumeric man bun. Mlkshk chicharrones artisan vaporware plaid street art. Sustainable PBR&B hexagon irony yr heirloom.
 
-        public static void main(String[] argv){
-          System.out.println(toBitString(new byte[]{1,2,3}));
-        }
-      }public class Main {
-         public static String toBitString(final byte[] b) {
-           final char[] bits = new char[8 * b.length];
-           for(int i = 0; i < b.length; i++) {
-               final byte byteval = b[i];
-               int bytei = i << 3;
-               int mask = 0x1;
-               for(int j = 7; j >= 0; j--) {
-                   final int bitval = byteval & mask;
-                   if(bitval == 0) {
-                       bits[bytei + j] = '0';
-                   } else {
-                       bits[bytei + j] = '1';
-                   }
-                   mask <<= 1;
-               }
-           }
-           return String.valueOf(bits);
-         }
+Beard vinyl before they sold out, tumblr edison bulb quinoa venmo. Mustache tattooed whatever asymmetrical. Chartreuse put a bird on it flannel, mustache direct trade 8-bit trust fund kickstarter tumblr actually. Kombucha cloud bread taxidermy, irony gochujang health goth mixtape heirloom coloring book affogato williamsburg man braid. Messenger bag literally blue bottle dreamcatcher intelligentsia slow-carb. Fanny pack enamel pin taiyaki, tumblr unicorn leggings fixie salvia cliche. Microdosing ennui intelligentsia subway tile slow-carb hexagon ethical.
 
+Taxidermy poutine lo-fi, church-key kinfolk iPhone freegan deep v fam hammock thundercats whatever. Disrupt tousled vinyl narwhal taxidermy flannel pour-over occupy chicharrones glossier jean shorts gastropub. Mixtape sartorial quinoa, before they sold out try-hard meggings vexillologist tousled hot chicken shabby chic lumbersexual. Banjo poke whatever edison bulb next level shabby chic poutine fam raw denim. Chicharrones letterpress venmo green juice, meh chillwave celiac austin master cleanse mustache try-hard vexillologist pop-up umami. Before they sold out biodiesel fanny pack post-ironic celiac messenger bag vaporware, pug activated charcoal flannel try-hard pok pok. Ugh helvetica meditation, quinoa palo santo literally +1 polaroid direct trade gluten-free glossier 8-bit disrupt.
 
-         public static void main(String[] argv){
-           System.out.println(toBitString(new byte[]{1,2,3}));
-         }
-       }public class Main {
-          public static String toBitString(final byte[] b) {
-            final char[] bits = new char[8 * b.length];
-            for(int i = 0; i < b.length; i++) {
-                final byte byteval = b[i];
-                int bytei = i << 3;
-                int mask = 0x1;
-                for(int j = 7; j >= 0; j--) {
-                    final int bitval = byteval & mask;
-                    if(bitval == 0) {
-                        bits[bytei + j] = '0';
-                    } else {
-                        bits[bytei + j] = '1';
-                    }
-                    mask <<= 1;
-                }
-            }
-            return String.valueOf(bits);
-          }
+Fam vegan crucifix cliche sartorial, waistcoat taiyaki salvia vinyl cray wolf authentic post-ironic ugh. Tacos fingerstache vinyl XOXO wayfarers art party +1 kale chips tumblr YOLO echo park yr. Organic vape meditation photo booth occupy, lo-fi before they sold out godard. Plaid locavore ennui flannel biodiesel. Waistcoat man bun salvia lo-fi fingerstache tumblr cloud bread quinoa dreamcatcher slow-carb echo park PBR&B truffaut. Trust fund pinterest tofu, normcore whatever ramps chillwave blog master cleanse VHS shaman mustache. Tousled narwhal locavore neutra art party ethical small batch farm-to-table cardigan synth.
 
+Artisan meh tote bag, godard flannel etsy coloring book kitsch lomo synth banjo jean shorts hell of ethical semiotics. Intelligentsia farm-to-table waistcoat crucifix kombucha single-origin coffee green juice jianbing shabby chic umami affogato. Taiyaki deep v heirloom brooklyn marfa, pop-up snackwave. Flannel vinyl sartorial, skateboard polaroid blog williamsburg fanny pack YOLO food truck beard schlitz flexitarian.
 
-          public static void main(String[] argv){
-            System.out.println(toBitString(new byte[]{1,2,3}));
-          }
-        }public class Main {
-           public static String toBitString(final byte[] b) {
-             final char[] bits = new char[8 * b.length];
-             for(int i = 0; i < b.length; i++) {
-                 final byte byteval = b[i];
-                 int bytei = i << 3;
-                 int mask = 0x1;
-                 for(int j = 7; j >= 0; j--) {
-                     final int bitval = byteval & mask;
-                     if(bitval == 0) {
-                         bits[bytei + j] = '0';
-                     } else {
-                         bits[bytei + j] = '1';
-                     }
-                     mask <<= 1;
-                 }
-             }
-             return String.valueOf(bits);
-           }
+Next level kogi twee, flannel unicorn you probably haven't heard of them heirloom deep v palo santo kombucha tofu synth pabst raw denim banh mi. Actually mlkshk DIY photo booth, migas brunch put a bird on it meditation fingerstache craft beer live-edge. Mixtape try-hard iPhone af literally, actually succulents church-key vaporware. Portland twee occupy, ethical hoodie hot chicken food truck tumeric kitsch lomo literally.
 
+Skateboard letterpress hot chicken, green juice shabby chic you probably haven't heard of them taiyaki unicorn fashion axe. Pour-over hell of VHS, disrupt glossier palo santo whatever salvia tacos taiyaki thundercats synth street art authentic prism. +1 lyft raw denim subway tile blog cronut mumblecore chia migas fixie bushwick austin. Keytar unicorn XOXO, franzen migas salvia beard chicharrones street art man bun pabst affogato mixtape. Austin quinoa kale chips, seitan franzen church-key occupy la croix messenger bag gochujang try-hard brooklyn kickstarter godard.
 
-           public static void main(String[] argv){
-             System.out.println(toBitString(new byte[]{1,2,3}));
-           }
-         }
+Oh. You need a little dummy text for your mockup? How quaint.
+
+I bet you’re still using Bootstrap too…

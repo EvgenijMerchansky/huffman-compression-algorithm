@@ -1,14 +1,17 @@
 package com.company;
 
+import com.company.converters.ListCreator;
 import com.company.converters.QueueCreator;
 import com.company.converters.Strings;
+import com.company.converters.SymbolMapper;
 import com.company.helpers.Names;
 import com.company.nodes.Node;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.PriorityQueue;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.*;
 
 import static com.company.converters.SymbolMapper.converter;
 
@@ -38,12 +41,12 @@ class Application { // shift + fn + f6 (fast editing)
 				WriteManager.run().writeTable(mappedTable, TABLE_FILE_PATH);
 				// todo: make binary string from mapped table and write it in separate file
 				String compressedFile = WriteManager.run().writeString(TABLE_FILE_PATH, OUTPUT_FILE_NAME);
-
 				break;
 			case DECOMPRESS:
 				// todo: make instance for file unpacking
-				String decompressedString = Strings.converter().toString(file);
-				System.out.println(decompressedString);
+				List<Character> charactersList = ListCreator.converter().createList("/Users/admin/Desktop/algorithmHuffman/src/com/company/output/compressed.smalltest.txt");
+//				System.out.println(charactersList);
+				DecompressedFile.run().compareWithTable(TABLE_FILE_PATH, file);
 				// can use toBytesArray method for getting bytes array from `compressed file`.
 				break;
 			default:
