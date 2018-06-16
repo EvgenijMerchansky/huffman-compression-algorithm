@@ -1,16 +1,9 @@
 package com.company;
 
-import com.company.converters.ListCreator;
-import com.company.converters.QueueCreator;
-import com.company.converters.Strings;
-import com.company.converters.SymbolMapper;
+import com.company.converters.*;
 import com.company.helpers.Names;
 import com.company.nodes.Node;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
 import java.util.*;
 
 import static com.company.converters.SymbolMapper.converter;
@@ -45,8 +38,10 @@ class Application { // shift + fn + f6 (fast editing)
 			case DECOMPRESS:
 				// todo: make instance for file unpacking
 				List<Character> charactersList = ListCreator.converter().createList("/Users/admin/Desktop/algorithmHuffman/src/com/company/output/compressed.smalltest.txt");
-//				System.out.println(charactersList);
-				DecompressedFile.run().compareWithTable(TABLE_FILE_PATH, file);
+
+				Map<String, String> tableFromFile = ConvertTable.run().compareWithTable(TABLE_FILE_PATH); // compare with compressed file(string) values.
+
+				System.out.println(Arrays.toString(new Map[]{tableFromFile}));
 				// can use toBytesArray method for getting bytes array from `compressed file`.
 				break;
 			default:
