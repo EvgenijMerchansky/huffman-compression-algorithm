@@ -1,4 +1,4 @@
-package com.company;
+package com.company.baseClasses;
 
 import com.company.nodes.InnerNode;
 import com.company.nodes.Node;
@@ -8,11 +8,11 @@ import java.util.List;
 import java.util.PriorityQueue;
 
 class Tree {
-	private final List<Node> tableValues = new ArrayList<>();
 	private Tree() {
 	}
 
 	List<Node> getListForTable(PriorityQueue<Node> nodes) {
+		final List<Node> tableValues = new ArrayList<>();
 		while (nodes.size() > 1) {
 			Node first = nodes.poll();
 			Node second = nodes.poll();
@@ -22,7 +22,7 @@ class Tree {
 			}
 			Node parentNode = new InnerNode(symbol, first, second);
 			nodes.add(parentNode);
-			this.tableValues.add(parentNode);
+			tableValues.add(parentNode);
 		}
 
 		Node root = nodes.poll();
@@ -30,7 +30,7 @@ class Tree {
 		root.createCode("");
 		nodes.add(root);
 
-		return this.tableValues;
+		return tableValues;
 	}
 
 	static Tree run() {

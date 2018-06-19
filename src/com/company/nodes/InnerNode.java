@@ -24,6 +24,16 @@ public class InnerNode extends Node {
 	}
 
 	@Override
+	public Node getLeftChild() {
+		return this.leftChild;
+	}
+
+	@Override
+	public Node getRightChild() {
+		return this.rightChild;
+	}
+
+	@Override
 	public void createCode(String code) {
 		super.createCode(code);
 		this.code = code;

@@ -6,6 +6,8 @@ public class Node implements Comparable<Node> {
 	private int weight;
 	private Character symbol;
 	private String code;
+	private Node leftChidl;
+	private Node rightChidl;
 
 	public Node(Character symbol, int weight) {
 		this.symbol = symbol;
@@ -34,6 +36,14 @@ public class Node implements Comparable<Node> {
 
 	public void createCode(String code) {
 		setCode(code);
+	}
+
+	public Node getLeftChild() {
+		return leftChidl;
+	}
+
+	public Node getRightChild() {
+		return rightChidl;
 	}
 
 	@Override
